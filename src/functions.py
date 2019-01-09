@@ -23,11 +23,15 @@ def quality(city: str, data: pd.core.frame.DataFrame):
 
     city_row = data[(data.City == city)]
 
-    quality_value = city_row['Quality of Life Index'].values
+    city_quality = city_row['Quality of Life Index'].values
 
-    # TODO find maximum and minimum to normalize the index
+    quality_max = max(data['Quality of Life Index'].values)
+    quality_min = min(data['Quality of Life Index'].values)
 
-    return quality_value[0]
+    # Normalized values ​​using the extremes of the scale.
+    quality_value = (city_quality - quality_min) / (quality_max - quality_min)
+
+    return quality_value
 
 
 def cost(city: str, data: pd.core.frame.DataFrame):
