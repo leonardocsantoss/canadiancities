@@ -1,9 +1,7 @@
 
-from src.functions import quality
-from src.functions import cost
-from src.functions import environment
-from src.functions import lifestyle
 import pandas as pd
+
+from functions import quality, cost, environment, lifestyle
 
 
 def main():
@@ -11,27 +9,27 @@ def main():
         Prints "Canadian Cities!" to the display. And call the lifeQuality function.
     """
 
-    data = pd.read_csv("../data/numeo.csv")
+    df = pd.read_csv("../data/numeo.csv")
 
     print("Canadian Cities!\n")
 
     print("Quality of Life:")
-    quality_value = quality(data.City[0], data)
+    quality_value = quality(df.City[0], df)
     print(quality_value)
     print()
 
     print("Cost of Living:")
-    cost_value = cost(data.City[0], data)
+    cost_value = cost(df.City[0], df)
     print(cost_value)
     print()
 
     print("Environmental Factors")
-    env_value = environment(data.City[0], data)
+    env_value = environment(df.City[0], df)
     print(env_value)
     print()
 
     print("Lifestyle")
-    style_value = lifestyle(data.City[0], data)
+    style_value = lifestyle(df.City[0], df)
     print(style_value)
     print()
 
