@@ -8,6 +8,7 @@ The example module supplies functions to calculate properties from Canadian Citi
 For example, Life Quality, Cost of Living, Environmental Factors and Lifestyle.
 """
 
+
 def normalize(index: str, df: pd.core.frame.DataFrame):
     """
         Return normalized values ​​using the extremes of the scale.
